@@ -1,8 +1,10 @@
 <?php
 
+
 namespace App\Services;
 
-class BeverageService
+
+interface BaseService
 {
 
 }
