@@ -23,12 +23,16 @@
                         <td><?php echo $beverage->name ?></td>
                         <td><?php echo $beverage->price ?></td>
                         <td style="width: 200px ; height: 100px " ><img style="height: 100%; width: 100%; object-fit: contain;" src='public/uploads/<?php echo $beverage->image?>' alt='Error Image'></td>
-                        <td></td>
-<!--                        <td><a href="./index.php?page=delete&id=--><?php //echo $product->getId(); ?><!--"-->
-<!--                               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>-->
-<!--                            <a href="./index.php?page=edit&id=--><?php //echo $product->getId(); ?><!--"-->
-<!--                               class="btn btn-primary btn-sm">Update</a>-->
-<!--                        </td>-->
+                        <td>
+                            <a href="./index.php?page=beverages&action=edit&id=<?php echo $beverage->id; ?>"
+                               class="btn btn-primary btn-sm">Update</a>
+                        </td>
+                        <td>
+                            <a href="./index.php?page=delete&id=<?php echo $beverage->id; ?>"
+                               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                            <a href="./index.php?page=beverages&action=edit&id=<?php echo $beverage->id; ?>"
+                               class="btn btn-primary btn-sm">Update</a>
+                        </td>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

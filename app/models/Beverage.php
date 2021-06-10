@@ -6,6 +6,13 @@ namespace App\Models;
 
 class Beverage
 {
+    /**
+     * @param mixed $category
+     */
+    public function setCategory(mixed $category): void
+    {
+        $this->category = $category;
+    }
     public int $id;
     public mixed $category;
     public string $name;

@@ -89,4 +89,22 @@ class BeverageService implements  BaseService
         $product->setImage($image);
         $this->beverageModel->insertData($product);
     }
+
+    public function getDataById($id): Beverage
+    {
+        $data = $this->beverageModel->getDataById($id);
+        $beverage = new Beverage($data[0]);
+        $beverage->setId($data[0]['id']);
+        $beverage->setImage($data[0]['image']);
+        $categoryName = $this->beverageModel->getCategoryName($id);
+        $beverage->setCategory($categoryName[0]['name']);
+        return $beverage;
+    }
+
+    public function updateData($id, $data,$image)
+    {
+        $beverage = new Beverage($data);
+        $beverage->setImage($image);
+        $this->beverageModel->updateData($id, $beverage);
+    }
 }
