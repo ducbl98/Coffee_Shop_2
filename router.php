@@ -2,23 +2,34 @@
 
 use App\Controllers\AuthController;
 use App\Controllers\BillController;
+use App\Controllers\BeverageController;
 
-$page = isset($_REQUEST['page']) ?? null;
+$page = $_REQUEST['page'] ?? null;
+$action = $_REQUEST['action'] ?? null;
 switch ($page) {
-
-
+    case 'beverages':
+        $beverageController = new BeverageController();
+        switch ($action) {
+            case "delete":
+                break;
+            case "add":
+                $beverageController->addBeverage();
+                break;
+            default:
+                $beverageController->listBeverage();
+                break;
+        }
+        break;
     case 'bill':
-//        echo "<pre>";
-//        var_dump(123);
-//        echo "</pre>";
-//        exit;
         $billController = new BillController();
         $billController->getBill();
         break;
     case 'logout':
-        $authcontroller = new AuthController();
-        $authcontroller->logout();
+        $authController = new AuthController();
+        $authController->logout();
         break;
-    default:
+//    default:
+//        $homeController = new HomeController();
+//        $homeController->showDashboard();
 
 }
