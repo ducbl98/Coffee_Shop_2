@@ -15,6 +15,9 @@ switch ($page) {
             case "add":
                 $beverageController->addBeverage();
                 break;
+            case "edit":
+                $beverageController->editBeverage();
+                break;
             default:
                 $beverageController->listBeverage();
                 break;

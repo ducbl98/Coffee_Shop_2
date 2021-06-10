@@ -28,7 +28,6 @@ class BeverageModel extends Model implements BasicFunction
             $stmt->bindParam("cost", $beverage->cost);
             $stmt->bindParam("image", $beverage->image);
             $stmt->bindParam("name1", $beverage->category);
-            return $stmt->execute();
         } else {
             $sql = 'INSERT INTO `Categories`(`name`) 
                   VALUES (:name );
@@ -40,8 +39,8 @@ class BeverageModel extends Model implements BasicFunction
             $stmt->bindParam("status", $beverage->status);
             $stmt->bindParam("cost", $beverage->cost);
             $stmt->bindParam("image", $beverage->image);
-            return $stmt->execute();
         }
+        return $stmt->execute();
     }
 
     public function checkExistCategory($name): bool
@@ -51,5 +50,44 @@ class BeverageModel extends Model implements BasicFunction
         $stmt->bindParam("name1", $name);
         $stmt->execute();
         return empty($stmt->fetchAll(\PDO::FETCH_ASSOC));
+    }
+    public function getCategoryName($id): array
+    {
+        $sql='SELECT `name` FROM `Categories` WHERE `id` =:id';
+        $stmt=$this->connection->prepare($sql);
+        $stmt->bindParam("id",$id);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getDataById($id): array
+    {
+        $sql = 'SELECT * FROM `Beverages` WHERE id =:id';
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function updateData($id, Beverage $beverage): bool
+    {
+        $checkExist = $this->checkExistCategory($beverage->category);
+        if (!$checkExist) {
+            $sql = 'UPDATE `Beverages` 
+                  SET `name` =:name,
+                      `cost`=:cost,
+                      `price`=:price,
+                      `status`=:status,
+                      `image`=:image 
+                  WHERE `id`=:id';
+            $stmt = $this->connection->prepare($sql);
+            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":name", $beverage->name);
+            $stmt->bindParam(":price", $beverage->price);
+            $stmt->bindParam(":status", $beverage->status);
+            $stmt->bindParam(":cost", $beverage->cost);
+            $stmt->bindParam(":image", $beverage->image);
+            return $stmt->execute();
+        }
     }
 }
