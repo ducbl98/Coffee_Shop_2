@@ -4,7 +4,7 @@
 namespace App\Models;
 
 
-class BeverageModel
+class BeverageModel extends Model implements BasicFunction
 {
 
 }
