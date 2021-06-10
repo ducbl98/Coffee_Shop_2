@@ -7,3 +7,4 @@ $auth->isLogin();
 ?>
 <?php require_once "router.php"?>
 <a href="index.php?page=logout">Log out</a>
+<a href="index.php?page=bill">List bill</a>
