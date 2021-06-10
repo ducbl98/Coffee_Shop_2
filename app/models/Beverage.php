@@ -13,6 +13,14 @@ class Beverage
     {
         $this->category = $category;
     }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus(mixed $status): void
+    {
+        $this->status = $status;
+    }
     public int $id;
     public mixed $category;
     public string $name;

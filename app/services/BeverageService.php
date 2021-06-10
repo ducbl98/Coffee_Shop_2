@@ -96,6 +96,11 @@ class BeverageService implements  BaseService
         $beverage = new Beverage($data[0]);
         $beverage->setId($data[0]['id']);
         $beverage->setImage($data[0]['image']);
+        if($data[0]['status']==1){
+            $beverage->setStatus('Hot');
+        }else{
+            $beverage->setStatus("Cold");
+        }
         $categoryName = $this->beverageModel->getCategoryName($beverage->category);
         $beverage->setCategory($categoryName[0]['name']);
         return $beverage;
