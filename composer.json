@@ -1,0 +1,21 @@
+{
+  "name": "vendor_name/Coffee_Shop_2",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "shin_bae",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\Controllers\\": "app/controllers",
+      "App\\Models\\": "app/models",
+      "App\\Middles\\": "app/middles"
+    }
+  },
+  "require": {
+  }
+}
