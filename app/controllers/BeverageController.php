@@ -59,4 +59,10 @@ class BeverageController
         $this->beverageService->deleteData($_GET['id']);
         header('Location: index.php?page=beverages');
     }
+
+    public function detailBeverage()
+    {
+        $beverage=$this->beverageService->getDataById($_GET['id']);
+        include_once 'resources/views/users/detail.php';
+    }
 }
