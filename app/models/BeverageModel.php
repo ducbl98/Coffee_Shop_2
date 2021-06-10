@@ -74,19 +74,19 @@ class BeverageModel extends Model implements BasicFunction
         $checkExist = $this->checkExistCategory($beverage->category);
         if (!$checkExist) {
             $sql = 'UPDATE `Beverages` 
-                  SET `name`=:name,
+                  SET `name` =:name,
                       `cost`=:cost,
                       `price`=:price,
-                      `status`:status,
-                      `image`=:image, 
+                      `status`=:status,
+                      `image`=:image 
                   WHERE `id`=:id';
             $stmt = $this->connection->prepare($sql);
             $stmt->bindParam(":id", $id);
             $stmt->bindParam(":name", $beverage->name);
             $stmt->bindParam(":price", $beverage->price);
-            $stmt->bindParam("status", $beverage->status);
-            $stmt->bindParam("cost", $beverage->cost);
-            $stmt->bindParam("image", $beverage->image);
+            $stmt->bindParam(":status", $beverage->status);
+            $stmt->bindParam(":cost", $beverage->cost);
+            $stmt->bindParam(":image", $beverage->image);
             return $stmt->execute();
         }
     }
