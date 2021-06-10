@@ -1,6 +1,7 @@
 <?php
 
-
+use App\Controllers\AuthController;
+use App\Controllers\BillController;
 use App\Controllers\BeverageController;
 
 $page = $_REQUEST['page'] ?? null;
@@ -17,13 +18,16 @@ switch ($page) {
             default:
                 $beverageController->listBeverage();
                 break;
-
         }
         break;
-//    case 'logout':
-//        $authController = new AuthController();
-//        $authController->logout();
-//        break;
+    case 'bill':
+        $billController = new BillController();
+        $billController->getBill();
+        break;
+    case 'logout':
+        $authController = new AuthController();
+        $authController->logout();
+        break;
 //    default:
 //        $homeController = new HomeController();
 //        $homeController->showDashboard();

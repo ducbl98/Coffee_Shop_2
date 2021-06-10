@@ -1,5 +1,5 @@
 {
-  "name": "vendor_name/Coffee_Shop_2",
+  "name": "vendor_name/coffee_shop_2",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -14,9 +14,11 @@
       "App\\Controllers\\": "app/controllers",
       "App\\Models\\": "app/models",
       "App\\Middles\\": "app/middles",
-      "App\\Services\\": "app/services"
+      "App\\Services\\": "app/services",
+      "App\\": "app/"
     }
   },
   "require": {
+    "ext-pdo": "*"
   }
 }

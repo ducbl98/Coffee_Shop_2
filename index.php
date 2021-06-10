@@ -1,5 +1,10 @@
 <?php
-include_once "vendor/autoload.php"; ?>
+use App\Middles\AuthCheck;
+session_start();
+require_once "vendor/autoload.php";
+$auth = new AuthCheck();
+$auth->isLogin();
+?>
 <!doctype html>
 <html lang="en">
 <head>
