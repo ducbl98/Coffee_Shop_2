@@ -11,6 +11,7 @@ switch ($page) {
         $beverageController = new BeverageController();
         switch ($action) {
             case "delete":
+                $beverageController->deleteBeverage();
                 break;
             case "add":
                 $beverageController->addBeverage();

@@ -90,4 +90,15 @@ class BeverageModel extends Model implements BasicFunction
             return $stmt->execute();
         }
     }
+
+    public function deleteData($id): bool
+    {
+        $sql = 'DELETE FROM `Beverages` WHERE id = :id;
+                SET @autoid=0;
+                UPDATE `Beverages` SET id=@autoid:=(@autoid +1 );
+                ALTER TABLE `Beverages` AUTO_INCREMENT =1;';
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
 }

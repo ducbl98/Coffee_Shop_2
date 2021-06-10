@@ -53,4 +53,10 @@ class BeverageController
             }
         }
     }
+
+    public function deleteBeverage()
+    {
+        $this->beverageService->deleteData($_GET['id']);
+        header('Location: index.php?page=beverages');
+    }
 }

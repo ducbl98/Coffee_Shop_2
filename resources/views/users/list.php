@@ -28,7 +28,7 @@
                                class="btn btn-primary btn-sm">Update</a>
                         </td>
                         <td>
-                            <a href="./index.php?page=delete&id=<?php echo $beverage->id; ?>"
+                            <a href="./index.php?page=beverages&action=delete&id=<?php echo $beverage->id; ?>"
                                class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
                             <a href="./index.php?page=beverages&action=edit&id=<?php echo $beverage->id; ?>"
                                class="btn btn-primary btn-sm">Update</a>

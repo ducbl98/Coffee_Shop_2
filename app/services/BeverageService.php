@@ -96,7 +96,7 @@ class BeverageService implements  BaseService
         $beverage = new Beverage($data[0]);
         $beverage->setId($data[0]['id']);
         $beverage->setImage($data[0]['image']);
-        $categoryName = $this->beverageModel->getCategoryName($id);
+        $categoryName = $this->beverageModel->getCategoryName($beverage->category);
         $beverage->setCategory($categoryName[0]['name']);
         return $beverage;
     }
@@ -106,5 +106,12 @@ class BeverageService implements  BaseService
         $beverage = new Beverage($data);
         $beverage->setImage($image);
         $this->beverageModel->updateData($id, $beverage);
+    }
+
+    public function deleteData($id)
+    {
+        $imageToDelete=$this->getDataById($id)->image;
+        unlink("public/uploads/".$imageToDelete);
+        $this->beverageModel->deleteData($id);
     }
 }
