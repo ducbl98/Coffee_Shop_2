@@ -1,5 +1,5 @@
 {
-  "name": "vendor_name/Coffee_Shop_2",
+  "name": "vendor_name/coffee_shop_2",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -18,5 +18,6 @@
     }
   },
   "require": {
+    "ext-pdo": "*"
   }
 }
