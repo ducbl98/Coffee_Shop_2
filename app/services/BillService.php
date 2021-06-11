@@ -31,7 +31,14 @@ class BillService
     public function getDetail($id)
     {
         $data = $this->billModel->getDetail($id);
-
+        $total = $this->billModel->getTotal($id);
+        $bills = [];
+        foreach ($data as $item) {
+            $bill = new Bill($item);
+            $bill->setTotal($total['@total']);
+            $bills[] = $bill;
+        }
+        return $bills;
     }
 
 }

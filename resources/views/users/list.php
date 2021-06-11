@@ -1,7 +1,7 @@
 <div class="col-12 col-md-12 mt-2">
     <div class="card">
         <div class="card-header">
-            Product List
+            Beverage List
         </div>
         <div class="card-body">
             <div class="col-12">
@@ -13,7 +13,8 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>Image</th>
-                        <th></th>
+                        <th>Detail</th>
+                        <th>Update</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -23,12 +24,16 @@
                         <td><?php echo $beverage->name ?></td>
                         <td><?php echo $beverage->price ?></td>
                         <td style="width: 200px ; height: 100px " ><img style="height: 100%; width: 100%; object-fit: contain;" src='public/uploads/<?php echo $beverage->image?>' alt='Error Image'></td>
-                        <td></td>
-<!--                        <td><a href="./index.php?page=delete&id=--><?php //echo $product->getId(); ?><!--"-->
-<!--                               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>-->
-<!--                            <a href="./index.php?page=edit&id=--><?php //echo $product->getId(); ?><!--"-->
-<!--                               class="btn btn-primary btn-sm">Update</a>-->
-<!--                        </td>-->
+                        <td>
+                            <a href="./index.php?page=beverages&action=detail&id=<?php echo $beverage->id; ?>"
+                               class="btn btn-primary btn-sm">Detail</a>
+                        </td>
+                        <td>
+                            <a href="./index.php?page=beverages&action=delete&id=<?php echo $beverage->id; ?>"
+                               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                            <a href="./index.php?page=beverages&action=edit&id=<?php echo $beverage->id; ?>"
+                               class="btn btn-primary btn-sm">Update</a>
+                        </td>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

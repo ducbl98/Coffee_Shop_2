@@ -10,6 +10,7 @@ class Bill
     public $quantity;
     public $priceEach;
     public $total;
+    public $tableNumber;
 
     public function __construct($data)
     {
@@ -17,7 +18,7 @@ class Bill
         $this->image = $data['image'];
         $this->quantity = $data['quantity'];
         $this->priceEach = $data['priceEach'];
-        $this->total = $data['total'];
+        $this->tableNumber = $data['tableNumber'];
     }
 
     /**
@@ -26,6 +27,14 @@ class Bill
     public function setOrderNumber($orderNumber): void
     {
         $this->orderNumber = $orderNumber;
+    }
+
+    /**
+     * @param mixed $total
+     */
+    public function setTotal($total): void
+    {
+        $this->total = $total;
     }
 
 }

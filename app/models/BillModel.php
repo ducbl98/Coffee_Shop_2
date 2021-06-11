@@ -16,10 +16,24 @@ class BillModel extends Model
 
     public function getDetail($id)
     {
-        $sql = "SELECT * FROM Orders WHERE id=?";
+        $sql = "CALL getDetailBill(:id)";
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam(1,$id);
+        $stmt->bindParam(':id',$id);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function getTotal($id)
+    {
+        $sql = "CALL getTotalBillDetail(:id,@total)";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+        $total = $this->connection->query("SELECT @total")->fetch(\PDO::FETCH_ASSOC);
+//        echo "<pre>";
+//        var_dump($total);
+//        echo "</pre>";
+//        exit;
+        return $total;
     }
 }

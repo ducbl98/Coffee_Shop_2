@@ -105,7 +105,6 @@
                     <thead>
                     <tr>
                         <th>Order Number</th>
-                        <th>Photo</th>
                         <th>Name Beverages</th>
                         <th>Quantity</th>
                         <th>Price Each</th>
@@ -118,7 +117,6 @@
 
                     <tr>
                         <td><?php echo $bill->orderNumber?></td>
-                        <td><?php echo $bill->image?></td>
                         <td><?php echo $bill->nameBev?>...</td>
                         <td><?php echo $bill->quantity?></td>
                         <td><?php echo $bill->priceEach?></td>
