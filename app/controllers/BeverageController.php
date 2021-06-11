@@ -23,6 +23,7 @@ class BeverageController
     public function addBeverage()
     {
         if ($_SERVER["REQUEST_METHOD"] == 'GET') {
+            $categories=$this->beverageService->getAllCategory();
             include_once 'resources/views/users/add.php';
         } else {
             $errors = $this->beverageService->validateForm();
@@ -31,24 +32,30 @@ class BeverageController
                 $this->beverageService->addData($_POST, $_FILES['image']['name']);
                 header('Location: index.php?page=beverages');
             } else {
+                $categories=$this->beverageService->getAllCategory();
                 include_once 'resources/views/users/add.php';
             }
         }
     }
     public function editBeverage()
     {
+        $beverage = $this->beverageService->getDataById($_GET['id']);
         if($_SERVER['REQUEST_METHOD']=='GET'){
-            $beverage = $this->beverageService->getDataById($_GET['id']);
+            $categories=$this->beverageService->getAllCategory();
             include_once 'resources/views/users/edit.php';
         }else{
-            $errors = $this->beverageService->validateForm();
+            $errors = $this->beverageService->validateFormEdit();
             $id=$_POST['id'];
             if (empty($errors)) {
-                move_uploaded_file($_FILES["image"]["tmp_name"], "public/uploads/".$_FILES['image']['name']);
-                $this->beverageService->updateData($id,$_POST, $_FILES['image']['name']);
+                if ($_FILES['image']['name']!=null) {
+                    move_uploaded_file($_FILES["image"]["tmp_name"], "public/uploads/" . $_FILES['image']['name']);
+                    $this->beverageService->updateData($id, $_POST, $_FILES['image']['name']);
+                }else{
+                    $this->beverageService->updateData($id,$_POST,$beverage->image);
+                }
                 header('Location: index.php?page=beverages');
             } else {
-                $beverage = $this->beverageService->getDataById($_GET['id']);
+                $categories=$this->beverageService->getAllCategory();
                 include_once 'resources/views/users/edit.php';
             }
         }
