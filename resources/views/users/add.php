@@ -27,9 +27,16 @@
                             <p class="text-danger"><?php echo $errors['cost'] ?></p>
                         <?php endif; ?>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Category</label>
-                        <input type="text" class="form-control" name="category">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="category">
+                            <option value="0" disabled selected>Choose Category</option>
+                            <?php foreach ($categories as $category):?>
+                                <option value="<?php echo $category['id']?>"><?php echo $category['name']?></option>
+                            <?php endforeach;?>
+                        </select>
                         <?php if (isset($errors['category'])): ?>
                             <p class="text-danger"><?php echo $errors['category'] ?></p>
                         <?php endif; ?>
