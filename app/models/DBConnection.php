@@ -12,9 +12,9 @@ class DBConnection
 
     public function __construct()
     {
-        $this->dsn = 'mysql:host=localhost;dbname=demo';
+        $this->dsn = 'mysql:host=localhost;dbname=coffee_shop_management';
         $this->user = 'root';
-        $this->password = 'Leduc1998*';
+        $this->password = '123456';
     }
 
     public function connect(): \PDO
