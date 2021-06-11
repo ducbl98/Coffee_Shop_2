@@ -3,9 +3,8 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -18,14 +17,15 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="./index.php?page=logout">Logout</a>
-                    <div>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Another action</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a href="./index.php?page=order&action=createOrder" class="dropdown-item">Tao don hang</a>
-                            </div>
-                        </li>
-                    </div>    
+
+
+                    <a class="dropdown-item" href="index.php?page=order&action=createOrder">Create New Order</a>
+
+
+
+
+
+
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>

@@ -27,7 +27,7 @@ class OrderService
     {
 
         $list = new BeverageModel();
-        $results = $list->show();
+        $results = $list->getAllData();
         if ($_SERVER['REQUEST_METHOD'] == "GET") {
             include "resources/views/orders/createOrder.php";
         } else {

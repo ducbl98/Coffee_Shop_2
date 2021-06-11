@@ -1,33 +1,42 @@
 <?php
 
 
+use App\Controllers\AuthController;
+use App\Controllers\BillController;
 use App\Controllers\BeverageController;
 use App\Controllers\OrderController;
 
-require_once "vendor/autoload.php";
-$page= $_REQUEST['page'] ?? null;
-$action= $_REQUEST['action'] ?? null;
 
-
-switch ($page){
-    case 'beverage':
-        $beverageController=new BeverageController();
-        switch ($action){
-            case "show":
-                $beverageController->show();
+$page = $_REQUEST['page'] ?? null;
+$action = $_REQUEST['action'] ?? null;
+switch ($page) {
+    case 'beverages':
+        $beverageController = new BeverageController();
+        switch ($action) {
+            case "delete":
+                $beverageController->deleteBeverage();
                 break;
             case "add":
-
+                $beverageController->addBeverage();
                 break;
-            case "update":
-
+            case "detail":
+                $beverageController->detailBeverage();
                 break;
-            case "delete":
+            case "edit":
+                $beverageController->editBeverage();
                 break;
-
             default:
+                $beverageController->listBeverage();
                 break;
         }
+        break;
+    case 'bill':
+        $billController = new BillController();
+        $billController->getBill();
+        break;
+    case 'logout':
+        $authController = new AuthController();
+        $authController->logout();
         break;
     case "order":
         $orderController=new OrderController();
@@ -40,7 +49,8 @@ switch ($page){
                 break;
         }
         break;
-    default:
-        break;
-}
+//    default:
+//        $homeController = new HomeController();
+//        $homeController->showDashboard();
 
+}
