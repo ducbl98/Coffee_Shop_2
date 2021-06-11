@@ -3,6 +3,7 @@
 namespace App\Services;
 
 
+
 use App\Models\Beverage;
 use App\Models\BeverageModel;
 
@@ -10,10 +11,12 @@ class BeverageService implements BaseService
 {
     public BeverageModel $beverageModel;
 
+
     public function getAllCategory(): array
     {
         return $this->beverageModel->getAllCategoryName();
     }
+
 
     public function __construct()
     {
@@ -23,6 +26,7 @@ class BeverageService implements BaseService
     public function convertDataToObject(): array
     {
         $data = $this->beverageModel->getAllData();
+        //var_dump($data);
         $beverages = [];
         foreach ($data as $item) {
             $beverage = new Beverage($item);
