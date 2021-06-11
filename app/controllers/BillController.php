@@ -16,12 +16,14 @@ class BillController
 
     public function getBill()
     {
-//        echo "<pre>";
-//        var_dump(123);
-//        echo "</pre>";
-//        exit;
        $bills = $this->billService->getBill();
-       require_once "../../resources/views/bills/list.php";
+       require_once "resources/views/bills/list.php";
+    }
+
+    public function detail($id)
+    {
+        $bills = $this->billService->getDetail($id);
+        require_once "resources/views/bills/detail.php";
     }
 
 }

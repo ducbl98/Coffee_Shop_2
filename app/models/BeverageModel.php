@@ -40,7 +40,11 @@ class BeverageModel extends Model implements BasicFunction
             $stmt->bindParam("status", $beverage->status);
             $stmt->bindParam("cost", $beverage->cost);
             $stmt->bindParam("image", $beverage->image);
-            return $stmt->execute();
+            $test = $stmt->execute();
+            echo "<pre>";
+            var_dump($test);
+            echo "</pre>";
+            exit;
         }
     }
 
