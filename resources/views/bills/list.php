@@ -85,12 +85,12 @@
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown button
+                            Thong ke hoa don
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Hom nay</a>
+                            <a class="dropdown-item" href="#">Hom qua</a>
+                            <a class="dropdown-item" href="#">Thang nay</a>
                         </div>
                     </div>
 
@@ -99,29 +99,28 @@
 
 <!--            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
 
-            <h2>List Bill Today</h2>
+            <h2>List Bill</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
                         <th>Order Number</th>
-                        <th>Name Beverages</th>
-                        <th>Quantity</th>
-                        <th>Price Each</th>
+                        <th>Time Order</th>
+                        <th>Time Payment</th>
                         <th>Total</th>
+                        <th>Table</th>
                         <th>Detail</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php foreach ($bills as $key => $bill): ?>
-
                     <tr>
-                        <td><?php echo $bill->orderNumber?></td>
-                        <td><?php echo $bill->nameBev?>...</td>
-                        <td><?php echo $bill->quantity?></td>
-                        <td><?php echo $bill->priceEach?></td>
+                        <td><?php echo $bill->id?></td>
+                        <td><?php echo $bill->timeOrder?></td>
+                        <td><?php echo $bill->timePayment?></td>
                         <td><?php echo $bill->total?></td>
-                        <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->orderNumber?>">Detail</a></td>
+                        <td><?php echo $bill->tableNumber?></td>
+                        <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id?>">Detail</a></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>

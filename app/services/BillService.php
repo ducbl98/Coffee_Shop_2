@@ -22,7 +22,7 @@ class BillService
         $bills = [];
         foreach ($data as $item) {
             $bill = new Bill($item);
-            $bill->setOrderNumber($item['orderNumber']);
+            $bill->setId($item['id']);
             $bills[] = $bill;
         }
         return $bills;

@@ -8,7 +8,7 @@ class BillModel extends Model
 {
     public function getView()
     {
-        $sql = "SELECT * FROM billOrder";
+        $sql = "SELECT * FROM listBill";
         $stmt = $this->connection->query($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -30,10 +30,6 @@ class BillModel extends Model
         $stmt->bindParam(':id',$id);
         $stmt->execute();
         $total = $this->connection->query("SELECT @total")->fetch(\PDO::FETCH_ASSOC);
-//        echo "<pre>";
-//        var_dump($total);
-//        echo "</pre>";
-//        exit;
         return $total;
     }
 }

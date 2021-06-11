@@ -1,8 +1,11 @@
 <?php
 
+
 use App\Controllers\AuthController;
 use App\Controllers\BillController;
 use App\Controllers\BeverageController;
+use App\Controllers\OrderController;
+
 
 $page = $_REQUEST['page'] ?? null;
 $action = $_REQUEST['action'] ?? null;
@@ -42,6 +45,17 @@ switch ($page) {
     case 'logout':
         $authController = new AuthController();
         $authController->logout();
+        break;
+    case "order":
+        $orderController=new OrderController();
+        switch ($action){
+
+            case "createOrder":
+                $orderController->create();
+                break;
+            case "addDetail":
+                break;
+        }
         break;
 //    default:
 //        $homeController = new HomeController();

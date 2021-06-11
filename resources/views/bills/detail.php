@@ -1,5 +1,4 @@
-<?php
-?>
+<?php ?>
 <h2>Detail Bill No.</h2>
 <div class="card-deck" style="text-align: center">
     <?php foreach ($bills as $bill):?>
