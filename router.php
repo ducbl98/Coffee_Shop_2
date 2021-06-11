@@ -37,6 +37,10 @@ switch ($page) {
                 $id = $_REQUEST['id'];
                 $billController->detail($id);
                 break;
+            case 'list-today':
+                $day = $_REQUEST['day'];
+                $billController->listBillCustom($day);
+                break;
             default:
                 $billController->getBill();
                 break;

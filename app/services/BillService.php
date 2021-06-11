@@ -41,4 +41,16 @@ class BillService
         return $bills;
     }
 
+    public function listBillCustom($day)
+    {
+        $data = $this->billModel->getBillCustom($day);
+        $bills = [];
+        foreach ($data as $item) {
+            $bill = new Bill($item);
+            $bill->setId($item['id']);
+            $bills[] = $bill;
+        }
+        return $bills;
+    }
+
 }
