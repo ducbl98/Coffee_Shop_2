@@ -79,7 +79,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-<!--                <h1 class="h2">Dashboard</h1>-->
+                <!--                <h1 class="h2">Dashboard</h1>-->
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,11 +91,13 @@
                             <a class="dropdown-item" href="./index.php?page=bill&action=list-today&day=30">Thang nay</a>
                         </div>
                     </div>
-
                 </div>
             </div>
-<!--            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
-            <h2>List Bill</h2>
+
+            <!--            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
+            <?php
+            ?>
+            <h2><?php echo $title ?></h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
@@ -110,14 +112,14 @@
                     </thead>
                     <tbody>
                     <?php foreach ($bills as $key => $bill): ?>
-                    <tr>
-                        <td><?php echo $bill->id?></td>
-                        <td><?php echo $bill->timeOrder?></td>
-                        <td><?php echo $bill->timePayment?></td>
-                        <td><?php echo $bill->total?></td>
-                        <td><?php echo $bill->tableNumber?></td>
-                        <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id?>">Detail</a></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $bill->id?></td>
+                            <td><?php echo $bill->timeOrder?></td>
+                            <td><?php echo $bill->timePayment?></td>
+                            <td><?php echo $bill->total?></td>
+                            <td><?php echo $bill->tableNumber?></td>
+                            <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id?>">Detail</a></td>
+                        </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>
