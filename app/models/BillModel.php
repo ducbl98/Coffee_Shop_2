@@ -6,10 +6,14 @@ namespace App\Models;
 
 class BillModel extends Model
 {
-    public function getView()
+    public function getView($page)
     {
-        $sql = "SELECT * FROM listBill";
-        $stmt = $this->connection->query($sql);
+        $record = 10;
+        $recordPage = $record * ($page - 1);
+        $sql = "SELECT * FROM listBill LIMIT ?,?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue(1, $recordPage, \PDO::PARAM_INT);
+        $stmt->bindValue(2, $record, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -40,7 +44,6 @@ class BillModel extends Model
         $stmt->bindParam(':day', $day);
         $stmt->execute();
         return $stmt->fetchAll();
-//        $total = $this->connection->query("SELECT @total")->fetch(\PDO::FETCH_ASSOC);
     }
 
     public function payment($bill)

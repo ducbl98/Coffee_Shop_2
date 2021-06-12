@@ -19,7 +19,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="./index.php?page=logout">Logout</a><a class="dropdown-item"
-                                                                                         href="./index.php?page=bill">Bill </a>
+                                                                                         href="index.php?page=bill&pg=1">Bill </a>
                     <a class="dropdown-item" href="index.php?page=order&action=createOrder">Create New Order</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>

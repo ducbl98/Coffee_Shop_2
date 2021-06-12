@@ -38,16 +38,18 @@ switch ($page) {
                 $billController->detail($id);
                 break;
             case 'list-today':
+                $page = $_REQUEST['pg'];
                 $day = $_REQUEST['day'];
                 $billController->listBillCustom($day);
                 break;
             case 'payment':
                 $bill = $_REQUEST['bill'];
                 $billController->payment($bill);
-                header("Location: index.php?page=bill");
+                header("Location: index.php?page=bill&pg=1");
                 break;
             default:
-                $billController->getBill();
+                $page = $_REQUEST['pg'];
+                $billController->getBill($page);
                 break;
         }
         break;
@@ -69,5 +71,4 @@ switch ($page) {
 //    default:
 //        $homeController = new HomeController();
 //        $homeController->showDashboard();
-
 }
