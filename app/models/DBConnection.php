@@ -14,14 +14,14 @@ class DBConnection
     {
         $this->dsn = 'mysql:host=localhost;dbname=coffee_shop_management';
         $this->user = 'root';
-        $this->password = '123456';
+        $this->password = '1234';
     }
 
     public function connect(): \PDO
     {
         try {
-            return new \PDO($this->dsn,$this->user,$this->password);
-        }catch (\PDOException $PDOException){
+            return new \PDO($this->dsn, $this->user, $this->password);
+        } catch (\PDOException $PDOException) {
             echo $PDOException->getMessage();
             die();
         }

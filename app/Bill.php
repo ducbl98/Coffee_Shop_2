@@ -4,26 +4,42 @@ namespace App;
 
 class Bill
 {
-    public $orderNumber;
+    public $id;
     public $nameBev;
     public $image;
-    public $quantiy;
+    public $quantity;
     public $priceEach;
+    public $total;
+    public $tableNumber;
+    public $timeOrder;
+    public $timePayment;
 
     public function __construct($data)
     {
         $this->nameBev = $data['name'];
         $this->image = $data['image'];
-        $this->quantiy = $data['quantity'];
+        $this->quantity = $data['quantity'];
         $this->priceEach = $data['priceEach'];
+        $this->tableNumber = $data['tableNumber'];
+        $this->timeOrder = $data['timeOrder'];
+        $this->timePayment = $data['timePayment'];
+        $this->total = $data['total'];
     }
 
     /**
-     * @param mixed $orderNumber
+     * @param mixed $id
      */
-    public function setOrderNumber($orderNumber): void
+    public function setId($id): void
     {
-        $this->orderNumber = $orderNumber;
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $total
+     */
+    public function setTotal($total): void
+    {
+        $this->total = $total;
     }
 
 }

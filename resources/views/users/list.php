@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<?php
-?>
-
-
-
-
 <table>
     <tr>
         <th></th>
@@ -21,7 +14,6 @@
     </tr>
     <?php endforeach;?>
 </table>
-=======
 <div class="col-12 col-md-12 mt-2">
     <div class="card">
         <div class="card-header">
@@ -65,4 +57,4 @@
         </div>
     </div>
 </div>
->>>>>>> e209959d4684342628b944adb24099ab891bb916
+

@@ -32,7 +32,15 @@ switch ($page) {
         break;
     case 'bill':
         $billController = new BillController();
-        $billController->getBill();
+        switch ($action) {
+            case 'detail':
+                $id = $_REQUEST['id'];
+                $billController->detail($id);
+                break;
+            default:
+                $billController->getBill();
+                break;
+        }
         break;
     case 'logout':
         $authController = new AuthController();
