@@ -1,11 +1,9 @@
 <?php
 
-
 use App\Controllers\AuthController;
 use App\Controllers\BillController;
 use App\Controllers\BeverageController;
 use App\Controllers\OrderController;
-
 
 $page = $_REQUEST['page'] ?? null;
 $action = $_REQUEST['action'] ?? null;
@@ -53,6 +51,10 @@ switch ($page) {
                 break;
         }
         break;
+    case 'register':
+        $authController = new AuthController();
+        $authController->register();
+        break;
     case 'logout':
         $authController = new AuthController();
         $authController->logout();
@@ -60,7 +62,6 @@ switch ($page) {
     case "order":
         $orderController=new OrderController();
         switch ($action){
-
             case "createOrder":
                 $orderController->create();
                 break;
