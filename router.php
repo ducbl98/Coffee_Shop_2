@@ -41,6 +41,11 @@ switch ($page) {
                 $day = $_REQUEST['day'];
                 $billController->listBillCustom($day);
                 break;
+            case 'payment':
+                $bill = $_REQUEST['bill'];
+                $billController->payment($bill);
+                header("Location: index.php?page=bill");
+                break;
             default:
                 $billController->getBill();
                 break;

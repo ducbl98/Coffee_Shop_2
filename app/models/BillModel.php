@@ -42,4 +42,14 @@ class BillModel extends Model
         return $stmt->fetchAll();
 //        $total = $this->connection->query("SELECT @total")->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function payment($bill)
+    {
+        $timePayment = date("Y-m-d H:i:s");
+        $sql = "UPDATE Orders SET timePayment = ? WHERE id = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(1, $timePayment);
+        $stmt->bindParam(2, $bill);
+        $stmt->execute();
+    }
 }

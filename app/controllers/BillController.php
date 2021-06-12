@@ -39,4 +39,9 @@ class BillController
         require_once "resources/views/bills/list_bill_custom.php";
     }
 
+    public function payment($bill)
+    {
+        $this->billService->payment($bill);
+
+    }
 }
