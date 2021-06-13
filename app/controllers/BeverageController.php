@@ -78,4 +78,10 @@ class BeverageController
         include_once 'resources/views/users/detail.php';
     }
 
+    public function searchBeverage()
+    {
+        $beverages = $this->beverageService->searchData($_POST["search"]);
+        include_once 'resources/views/users/list.php';
+    }
+
 }

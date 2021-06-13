@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Services;
-
 
 use App\Models\BeverageModel;
 use App\Models\OrderModel;
@@ -20,16 +18,15 @@ class OrderService
     public function createOrder($table, $date, $employee)
     {
         return $this->orderModel->createOrder($table, $date, $employee);
-
     }
 
     public function createdetail()
     {
-
         $list = new BeverageModel();
         $results = $list->getAllData();
         if ($_SERVER['REQUEST_METHOD'] == "GET") {
-            include "resources/views/orders/createOrder.php";
+            include "resources/views/orders/test.php";
+//            include "resources/views/orders/createOrder.php";
         } else {
             $table = $_POST['table'];
             $date = date("Y-m-d h:i:s ");
@@ -42,7 +39,7 @@ class OrderService
             $quantities = $_POST['quantity'];
             $prices = $_POST['price'];
             foreach ($_POST['listId'] as $key => $idBeverage) {
-                $this->orderModel->createOrderDetail((int)$order->id,(int)$idBeverage, (int)$quantities[$key],(int)$prices[$key]);
+                $this->orderModel->createOrderDetail((int)$order->id, (int)$idBeverage, (int)$quantities[$key], (int)$prices[$key]);
             }
             $orderDetails = $this->orderModel->updateOrderDetail((int)$order->id);
             $totalPay = $this->orderModel->totalPay((int)$order->id);
@@ -53,7 +50,6 @@ class OrderService
     public function create()
     {
         $this->createdetail();
-
     }
 
 }

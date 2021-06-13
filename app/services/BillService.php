@@ -16,24 +16,59 @@ class BillService
         $this->billModel = new BillModel();
     }
 
-    public function getBill()
+    public function getBill($page)
     {
-        $data = $this->billModel->getView();
-//        echo "<pre>";
-//        var_dump($data);
-//        echo "</pre>";
-//        exit;
+        $data = $this->billModel->getView($page);
         $bills = [];
         foreach ($data as $item) {
             $bill = new Bill($item);
-            $bill->setOrderNumber($item['orderNumber']);
+            $bill->setId($item['id']);
             $bills[] = $bill;
         }
-//        echo "<pre>";
-//        var_dump($bills);
-//        echo "</pre>";
-//        exit;
         return $bills;
     }
 
+    public function getDetail($id)
+    {
+        $data = $this->billModel->getDetail($id);
+        $total = $this->billModel->getTotal($id);
+        $bills = [];
+        foreach ($data as $item) {
+            $bill = new Bill($item);
+            $bill->setTotal($total['@total']);
+            $bill->setId($item['id']);
+            $bills[] = $bill;
+        }
+        return $bills;
+    }
+
+    public function listBillCustom($day)
+    {
+        $data = $this->billModel->getBillCustom($day);
+        $bills = [];
+        foreach ($data as $item) {
+            $bill = new Bill($item);
+            $bill->setId($item['id']);
+            $bills[] = $bill;
+        }
+        return $bills;
+    }
+
+    public function payment($bill)
+    {
+        $this->billModel->payment($bill);
+    }
+
+    public function search($value)
+    {
+        $data = $this->billModel->search($value);
+
+        $bills = [];
+        foreach ($data as $item) {
+            $bill = new Bill($item);
+            $bill->setId($item['id']);
+            $bills[] = $bill;
+        }
+        return $bills;
+    }
 }

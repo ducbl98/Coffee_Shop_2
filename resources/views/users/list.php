@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+=======
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th></th>-->
+<!--        <th>Ten do uong</th>-->
+<!--        <th>Hinh Anh</th>-->
+<!--        <th> Gia do uong </th>-->
+<!--    </tr>-->
+<!--    --><?php //foreach ($results as $key =>$result):?>
+<!--    <tr>-->
+<!--    <th><input type="checkbox" name="listId[]" value="--><?php //echo $result['id']?><!--"></th>-->
+<!--    <th>--><?php //echo $result['name']?><!--</th>-->
+<!--    <th>--><?php //echo $result['image']?><!--</th>-->
+<!--    <th>--><?php //echo $result['price']?><!--</th>-->
+<!--    </tr>-->
+<!--    --><?php //endforeach;?>
+<!--</table>-->
+>>>>>>> aae5045084b7a8144bb703e2d3542dc6f894221a
 <div class="col-12 col-md-12 mt-2">
     <div class="card">
         <div class="card-header">
@@ -41,3 +60,7 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> aae5045084b7a8144bb703e2d3542dc6f894221a

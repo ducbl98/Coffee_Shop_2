@@ -20,8 +20,8 @@ class DBConnection
     public function connect(): \PDO
     {
         try {
-            return new \PDO($this->dsn,$this->user,$this->password);
-        }catch (\PDOException $PDOException){
+            return new \PDO($this->dsn, $this->user, $this->password);
+        } catch (\PDOException $PDOException) {
             echo $PDOException->getMessage();
             die();
         }

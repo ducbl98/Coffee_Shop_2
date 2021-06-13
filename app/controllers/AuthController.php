@@ -24,4 +24,9 @@ class AuthController
     {
         $this->authService->logOut();
     }
+
+    public function register()
+    {
+        $this->authService->validate();
+    }
 }

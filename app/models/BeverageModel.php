@@ -1,19 +1,15 @@
 <?php
 
-
 namespace App\Models;
-
 
 class BeverageModel extends Model implements BasicFunction
 {
-
     public function getAllData(): array
     {
         $sql = 'SELECT * FROM `Beverages`';
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
     }
 
     public function insertData(Beverage $beverage): bool
@@ -87,5 +83,15 @@ class BeverageModel extends Model implements BasicFunction
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
+    }
+
+    public function findData($keyword): array
+    {
+        $sql = 'SELECT * FROM `Beverages` WHERE `name` LIKE :keyword';
+        $stmt = $this->connection->prepare($sql);
+        $findKey = '%' . $keyword . '%';
+        $stmt->bindParam(":keyword", $findKey);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
