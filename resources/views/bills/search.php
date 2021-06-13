@@ -79,7 +79,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-<!--                <h1 class="h2">Dashboard</h1>-->
+                <!--                <h1 class="h2">Dashboard</h1>-->
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,18 +94,18 @@
 
                 </div>
             </div>
-<!--            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
+            <!--            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
             <h2>List Bill</h2>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">
-<!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
+                        <!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
                     </li>
                     <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=1">1</a></li>
                     <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=2">2</a></li>
                     <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=3">3</a></li>
                     <li class="page-item">
-<!--                        <a class="page-link" href="#">Next</a>-->
+                        <!--                        <a class="page-link" href="#">Next</a>-->
                     </li>
                 </ul>
             </nav>
@@ -124,15 +124,15 @@
                     </thead>
                     <tbody>
                     <?php foreach ($bills as $key => $bill): ?>
-                    <tr>
-                        <td><?php echo $key+1?></td>
-                        <td><?php echo $bill->id?></td>
-                        <td><?php echo $bill->timeOrder?></td>
-                        <td><?php echo $bill->timePayment?></td>
-                        <td><?php echo $bill->total?></td>
-                        <td><?php echo $bill->tableNumber?></td>
-                        <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id?>">Detail</a></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $key+1?></td>
+                            <td><?php echo $bill->id?></td>
+                            <td><?php echo $bill->timeOrder?></td>
+                            <td><?php echo $bill->timePayment?></td>
+                            <td><?php echo $bill->total?></td>
+                            <td><?php echo $bill->tableNumber?></td>
+                            <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id?>">Detail</a></td>
+                        </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>

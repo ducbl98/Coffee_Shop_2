@@ -45,6 +45,10 @@ switch ($page) {
                 $billController->payment($bill);
                 header("Location: index.php?page=bill&pg=1");
                 break;
+            case 'search':
+                $value = $_POST['search'];
+                $billController->search($value);
+                break;
             default:
                 $page = $_REQUEST['pg'];
                 $billController->getBill($page);
@@ -60,8 +64,8 @@ switch ($page) {
         $authController->logout();
         break;
     case "order":
-        $orderController=new OrderController();
-        switch ($action){
+        $orderController = new OrderController();
+        switch ($action) {
             case "createOrder":
                 $orderController->create();
                 break;
