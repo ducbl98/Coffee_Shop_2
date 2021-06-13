@@ -14,7 +14,7 @@ class DBConnection
     {
         $this->dsn = 'mysql:host=localhost;dbname=coffee_shop_management';
         $this->user = 'root';
-        $this->password = '123456';
+        $this->password = 'Leduc1998*';
     }
 
     public function connect(): \PDO
