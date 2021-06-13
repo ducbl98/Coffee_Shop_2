@@ -1,19 +1,15 @@
 <?php
 
-
 namespace App\Models;
-
 
 class BeverageModel extends Model implements BasicFunction
 {
-
     public function getAllData(): array
     {
         $sql = 'SELECT * FROM `Beverages`';
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
     }
 
     public function insertData(Beverage $beverage): bool
