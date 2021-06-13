@@ -35,7 +35,7 @@
 <!--                </div>-->
 <!--            </li>-->
         </ul>
-        <form class="form-inline my-2 my-lg-0" method="post">
+        <form class="form-inline my-2 my-lg-0" method="post" action="index.php?page=beverages&action=search">
             <input class="form-control mr-sm-2" type="search" name="search" placeholder="YYYY-MM-DD or HH:MM:SS" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
