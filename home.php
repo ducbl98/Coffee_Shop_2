@@ -191,7 +191,7 @@
                 <p class="lead">Chức năng tiếp nhận đơn hàng bao gồm: Chọn đồ uống, thêm số lượng, hiển thị đồ uống.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img src="public/uploads/photo-1497032628192-86f99bcd76bc.jpeg" alt="img" width="350" height="350">
+                <img src="public/uploads/nathan-dumlao-pMW4jzELQCw-unsplash.jpg" alt="img" width="450" height="600">
             </div>
         </div>
 

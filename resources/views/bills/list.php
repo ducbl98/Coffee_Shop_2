@@ -44,13 +44,15 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">
-<!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
+                        <!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
                     </li>
                     <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=1">1</a></li>
                     <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=2">2</a></li>
                     <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=3">3</a></li>
+                    <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=4">4</a></li>
+                    <li class="page-item"><a class="page-link" href="./index.php?page=bill&pg=5">5</a></li>
                     <li class="page-item">
-<!--                        <a class="page-link" href="#">Next</a>-->
+                        <!--                        <a class="page-link" href="#">Next</a>-->
                     </li>
                 </ul>
             </nav>
@@ -69,15 +71,15 @@
                     </thead>
                     <tbody>
                     <?php foreach ($bills as $key => $bill): ?>
-                    <tr>
-                        <td><?php echo $key+1?></td>
-                        <td><?php echo $bill->id?></td>
-                        <td><?php echo $bill->timeOrder?></td>
-                        <td><?php echo $bill->timePayment?></td>
-                        <td><?php echo $bill->total?></td>
-                        <td><?php echo $bill->tableNumber?></td>
-                        <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id?>">Detail</a></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $key + 1 ?></td>
+                            <td><?php echo $bill->id ?></td>
+                            <td><?php echo $bill->timeOrder ?></td>
+                            <td><?php echo $bill->timePayment ?></td>
+                            <td><?php echo $bill->total ?></td>
+                            <td><?php echo $bill->tableNumber ?></td>
+                            <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id ?>">Detail</a></td>
+                        </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>
