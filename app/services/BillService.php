@@ -58,4 +58,17 @@ class BillService
     {
         $this->billModel->payment($bill);
     }
+
+    public function search($value)
+    {
+        $data = $this->billModel->search($value);
+
+        $bills = [];
+        foreach ($data as $item) {
+            $bill = new Bill($item);
+            $bill->setId($item['id']);
+            $bills[] = $bill;
+        }
+        return $bills;
+    }
 }

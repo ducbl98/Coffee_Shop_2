@@ -22,15 +22,15 @@
                                                                                          href="index.php?page=bill&pg=1">Bill </a>
                     <a class="dropdown-item" href="index.php?page=order&action=createOrder">Create New Order</a>
                     <div class="dropdown-divider"></div>
-<!--                    <a class="dropdown-item" href="index.php?page=register">Something else here</a>-->
+                    <a class="dropdown-item" href="index.php?page=bill&action=search">Search Bill</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" method="post">
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="YYYY-MM-DD or HH:MM:SS" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>

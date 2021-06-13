@@ -16,8 +16,8 @@ class BillController
 
     public function getBill($page)
     {
-       $bills = $this->billService->getBill($page);
-       require_once "resources/views/bills/list.php";
+        $bills = $this->billService->getBill($page);
+        require_once "resources/views/bills/list.php";
     }
 
     public function detail($id)
@@ -42,5 +42,14 @@ class BillController
     public function payment($bill)
     {
         $this->billService->payment($bill);
+    }
+
+    public function search($value)
+    {
+        $pattern = "/([0-9]{4}-[0-9]{1,2}-[0-9]{1,2})|([0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2})/";
+        if (preg_match($pattern, $value)) {
+            $bills = $this->billService->search($value);
+            require 'resources/views/bills/search.php';
+        }
     }
 }

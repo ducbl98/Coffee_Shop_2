@@ -55,4 +55,12 @@ class BillModel extends Model
         $stmt->bindParam(2, $bill);
         $stmt->execute();
     }
+
+    public function search($value)
+    {
+        $sql = "SELECT * FROM listBill WHERE `timeOrder` LIKE"."'%".$value."%' OR `timeOrder` LIKE"."'%".$value."%'";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
