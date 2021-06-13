@@ -21,7 +21,7 @@ class AuthService
         $user = $this->authModel->findByEmailPassword($request);
         if ($user) {
             $_SESSION['userLogin'] = $user;
-            header('Location: ../../index.php');
+            header('Location: ../../home.php');
         }
         return false;
     }

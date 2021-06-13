@@ -5,27 +5,27 @@
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="index.php?page=bill&action=search">
                             <span data-feather="home"></span>
-                            Dashboard <span class="sr-only">(current)</span>
+                            Search bill <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./index.php?page=bill&action=list-today&day=1">
                             <span data-feather="file"></span>
-                            Orders
+                            Today
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./index.php?page=bill&action=list-today&day=7">
                             <span data-feather="shopping-cart"></span>
-                            Products
+                            This week
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./index.php?page=bill&action=list-today&day=30">
                             <span data-feather="users"></span>
-                            Customers
+                            This month
                         </a>
                     </li>
                     <li class="nav-item">
@@ -34,80 +34,24 @@
                             Reports
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="layers"></span>
-                            Integrations
-                        </a>
-                    </li>
-                </ul>
-
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>Saved reports</span>
-                    <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                        <span data-feather="plus-circle"></span>
-                    </a>
-                </h6>
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Current month
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Last quarter
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Social engagement
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Year-end sale
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <!--                <h1 class="h2">Dashboard</h1>-->
-                <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Thong ke hoa don
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="./index.php?page=bill&action=list-today&day=1">Hom nay</a>
-                            <a class="dropdown-item" href="./index.php?page=bill&action=list-today&day=7">Tuan Nay</a>
-                            <a class="dropdown-item" href="./index.php?page=bill&action=list-today&day=30">Thang nay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!--            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
-            <?php
-            ?>
             <h2><?php echo $title ?></h2>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">
-<!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
+                        <!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
                     </li>
                     <li class="page-item"><a class="page-link" href="#">1</a></li>
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
-<!--                        <a class="page-link" href="#">Next</a>-->
+                        <!--                        <a class="page-link" href="#">Next</a>-->
                     </li>
                 </ul>
             </nav>
@@ -126,12 +70,12 @@
                     <tbody>
                     <?php foreach ($bills as $key => $bill): ?>
                         <tr>
-                            <td><?php echo $bill->id?></td>
-                            <td><?php echo $bill->timeOrder?></td>
-                            <td><?php echo $bill->timePayment?></td>
-                            <td><?php echo $bill->total?></td>
-                            <td><?php echo $bill->tableNumber?></td>
-                            <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id?>">Detail</a></td>
+                            <td><?php echo $bill->id ?></td>
+                            <td><?php echo $bill->timeOrder ?></td>
+                            <td><?php echo $bill->timePayment ?></td>
+                            <td><?php echo $bill->total ?></td>
+                            <td><?php echo $bill->tableNumber ?></td>
+                            <td><a href="./index.php?page=bill&action=detail&id=<?php echo $bill->id ?>">Detail</a></td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
