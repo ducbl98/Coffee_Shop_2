@@ -1,5 +1,4 @@
 <?php
-
 use App\Middles\AuthCheck;
 session_start();
 require_once "vendor/autoload.php";
