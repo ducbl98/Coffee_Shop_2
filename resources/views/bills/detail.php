@@ -14,6 +14,10 @@
     </div>
     <?php endforeach; ?>
 </div>
-<div class="card-footer">
+<div class="card-footer" >
     <medium class="text-muted">Total: <?php echo $bill->total?></medium>
+</div>
+<div class="card-footer" >
+    <a href="index.php?page=bill&action=payment&bill=<?php echo $bill->id?>">
+        <button type="button" class="btn btn-outline-secondary">Thanh toan</button></a>
 </div>

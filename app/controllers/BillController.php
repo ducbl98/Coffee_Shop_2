@@ -14,9 +14,9 @@ class BillController
         $this->billService = new BillService();
     }
 
-    public function getBill()
+    public function getBill($page)
     {
-       $bills = $this->billService->getBill();
+       $bills = $this->billService->getBill($page);
        require_once "resources/views/bills/list.php";
     }
 
@@ -39,4 +39,8 @@ class BillController
         require_once "resources/views/bills/list_bill_custom.php";
     }
 
+    public function payment($bill)
+    {
+        $this->billService->payment($bill);
+    }
 }

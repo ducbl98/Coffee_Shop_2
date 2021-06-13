@@ -16,9 +16,9 @@ class BillService
         $this->billModel = new BillModel();
     }
 
-    public function getBill()
+    public function getBill($page)
     {
-        $data = $this->billModel->getView();
+        $data = $this->billModel->getView($page);
         $bills = [];
         foreach ($data as $item) {
             $bill = new Bill($item);
@@ -36,6 +36,7 @@ class BillService
         foreach ($data as $item) {
             $bill = new Bill($item);
             $bill->setTotal($total['@total']);
+            $bill->setId($item['id']);
             $bills[] = $bill;
         }
         return $bills;
@@ -53,4 +54,8 @@ class BillService
         return $bills;
     }
 
+    public function payment($bill)
+    {
+        $this->billModel->payment($bill);
+    }
 }
