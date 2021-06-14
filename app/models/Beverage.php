@@ -6,28 +6,25 @@ namespace App\Models;
 
 class Beverage
 {
-    /**
-     * @param mixed $category
-     */
-    public function setCategory(mixed $category): void
+
+    public function setCategory($category): void
     {
         $this->category = $category;
     }
 
-    /**
-     * @param mixed $status
-     */
-    public function setStatus(mixed $status): void
+
+    public function setStatus($status): void
     {
         $this->status = $status;
     }
-    public int $id;
-    public mixed $category;
-    public string $name;
-    public float $price;
-    public float $cost;
-    public mixed $image;
-    public mixed $status;
+
+    public $id;
+    public $category;
+    public $name;
+    public $price;
+    public $cost;
+    public $image;
+    public $status;
 
 
     public function __construct($data)
@@ -39,18 +36,13 @@ class Beverage
         $this->status = $data['status'];
     }
 
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
+
+    public function setId($id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @param mixed $image
-     */
-    public function setImage(mixed $image): void
+    public function setImage($image): void
     {
         $this->image = $image;
     }
