@@ -84,4 +84,14 @@ class BeverageModel extends Model implements BasicFunction
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }
+
+    public function findData($keyword): array
+    {
+        $sql = 'SELECT * FROM `Beverages` WHERE `name` LIKE :keyword';
+        $stmt = $this->connection->prepare($sql);
+        $findKey = '%' . $keyword . '%';
+        $stmt->bindParam(":keyword", $findKey);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }

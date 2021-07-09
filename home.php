@@ -100,7 +100,7 @@
 
                 <div class="container">
                     <div class="carousel-caption text-right">
-                        <h1>Case study 2</h1>
+                        <h1>Hackathon 2021</h1>
                         <p>Something</p>
                         <p><a class="btn btn-lg btn-primary" href="resources/pages/login.php">Login</a></p>
                     </div>
@@ -192,7 +192,16 @@
         </div>
 
         <hr class="featurette-divider">
-
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Management Bill</h2>
+                <h4><span class="text-muted">Mr. Cao Ngan</span></h4>
+                <p class="lead">Chức năng quản lý đơn hàng bao gồm: Tìm kiếm đơn hàng.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="public/uploads/descrip.jpeg" alt="img" width="334" height="500">
+            </div>
+        </div>
         <!-- /END THE FEATURETTES -->
 
     </div><!-- /.container -->

@@ -23,6 +23,9 @@ switch ($page) {
             case "edit":
                 $beverageController->editBeverage();
                 break;
+            case "search":
+                $beverageController->searchBeverage();
+                break;
             default:
                 $beverageController->listBeverage();
                 break;

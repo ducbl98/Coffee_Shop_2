@@ -175,4 +175,18 @@ class BeverageService implements BaseService
         return $errorUpload;
     }
 
+    public function searchData($keyword): array
+    {
+        $data=$this->beverageModel->findData($keyword);
+        $beverages=[];
+
+        foreach ($data as $item){
+            $beverage= new Beverage($item);
+            $beverage->setId($item['id']);
+            $beverage->setImage($item['image']);
+            array_push($beverages,$beverage);
+        }
+        return $beverages;
+    }
+
 }
