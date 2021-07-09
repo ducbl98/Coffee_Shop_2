@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="text-center">
 
 <form class="form-signin" method="post">
-    <img class="mb-4" src="../../public/assets/brand/icon_coffee.jpg" alt="" width="100" height="100">
+    <img class="mb-4" src="../../public/assets/brand/icon_login.png" alt="" width="140" height="140">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <?php if (isset($error)): ?>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
